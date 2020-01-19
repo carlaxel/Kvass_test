@@ -35,7 +35,7 @@ router.post("/fetchPicture", async (req, res) => {
   console.log(req.body);
 
   var params = {
-    Bucket: "kvass",
+    Bucket: process.env.BUCKET,
     Key: req.body.Key
   };
   let data = await S3.getObject(params).promise();
@@ -45,7 +45,7 @@ router.post("/fetchPicture", async (req, res) => {
 
 router.get("/listObjects", async (req, res) => {
   let params = {
-    Bucket: "kvass",
+    Bucket: process.env.BUCKET,
     MaxKeys: 100
   };
   let list = await S3.listObjectsV2(params).promise();
