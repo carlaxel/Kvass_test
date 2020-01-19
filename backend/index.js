@@ -1,12 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv-flow").config();
-const multer = require("multer");
 
 const app = express();
 const pictureS3 = require("./routes/pictureS3");
-
-const upload = multer({ dest: "api-v1/uploadPicture" });
 
 if (dotenv.error) {
   throw dotenv.error;

@@ -34,21 +34,21 @@ router.post("/uploadPicture", upload.single("image"), (req, res) => {
 router.post("/fetchPicture", async (req, res) => {
   console.log(req.body);
 
-  var params = {
+  const params = {
     Bucket: process.env.BUCKET,
     Key: req.body.Key
   };
-  let data = await S3.getObject(params).promise();
+  const data = await S3.getObject(params).promise();
   console.log(data);
   res.status(200).json(data);
 });
 
 router.get("/listObjects", async (req, res) => {
-  let params = {
+  const params = {
     Bucket: process.env.BUCKET,
     MaxKeys: 100
   };
-  let list = await S3.listObjectsV2(params).promise();
+  const list = await S3.listObjectsV2(params).promise();
   console.log(list);
   res.status(200).json(list);
 });
