@@ -1,0 +1,16 @@
+.ImageComponent {
+  height: 90px;
+  width: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.Image {
+  margin-left: 1rem;
+}
+
+.ImageContainer {
+  padding: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+}
