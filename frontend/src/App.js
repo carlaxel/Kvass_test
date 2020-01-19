@@ -4,6 +4,8 @@ import ImageContainer from "./Components/ImageContainer";
 import styles from "./App.module.css";
 import "./App.css";
 
+import checkSuffix from "./Functions/CheckfileSuffix";
+
 function App() {
   const [inputFile, setInputFile] = useState("");
   const [blob, setBlob] = useState("");
@@ -11,6 +13,11 @@ function App() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    if (!checkSuffix(blob.name)) {
+      window.alert("not a compliant file");
+      return;
+    }
+
     let loading = {
       loading: true,
       Key: blob.name

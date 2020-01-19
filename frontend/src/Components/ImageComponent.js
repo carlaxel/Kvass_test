@@ -5,7 +5,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import styles from "./Image.module.css";
 
 //UPDATE VALUES
-const bucket = "insert bucket name";
+const bucket = "kvass";
 const region = "eu-north-1";
 
 export default function ImageComponent(props) {
